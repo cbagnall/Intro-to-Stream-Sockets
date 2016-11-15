@@ -15,7 +15,7 @@
 int main(int argc, char *argv[])
 {
 	char * response = "[Server] That is correct!";
-	char * password = "Secret code\n";
+	char * password = "Password\n";
      int sockfd, newsockfd, portnum;
      struct sockaddr_in serv_addr, cli_addr;
      socklen_t client_len = sizeof(cli_addr);

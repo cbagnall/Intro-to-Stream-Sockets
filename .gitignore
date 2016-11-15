@@ -1,0 +1,8 @@
+.metadata
+*/Debug
+*/Release
+*.log
+RemoteSystemTempFiles/
+*.cproject
+*.project
+*.txt

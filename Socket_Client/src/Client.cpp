@@ -56,8 +56,8 @@ int main(int argc, char *argv[])
     	FD_ZERO(&readfds);										//clear socket set
     	FD_SET(sockfd , &readfds); 								//add socket to set
 
-    	struct timeval timeout = {3,0}; 						//3 second timeout (needs to be reset
-		printf("[Client] Please enter the message: \n");		//since 'select' decrements it)
+    	struct timeval timeout = {1,0}; 						//1 second timeout (needs to be reset
+		printf("[Client] Please enter the password: \n");		//since 'select' decrements it)
 
 		fgets(send_buff,255,stdin); 							//block until data is available
 
@@ -76,7 +76,6 @@ int main(int argc, char *argv[])
 		else if (data_read > 0) {								//if socket contains data read it
 			memset(recieve_buff, 0, 256);						//clear receive_buff (server clears send_buff)
 			FD_CLR(sockfd, &readfds);
-			printf("trying to read...");
 			data_read = read(sockfd,recieve_buff,255);
 			if (data_read > 0) {
 				printf("%s\n",recieve_buff);
